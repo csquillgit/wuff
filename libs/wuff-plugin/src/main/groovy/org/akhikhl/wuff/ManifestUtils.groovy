@@ -103,7 +103,7 @@ class ManifestUtils {
      * if 'org.eclipse.xxx' are imported via 'Import-Package',
      * the application throws ClassNotFoundException.
      */
-    packages = packages.findAll { !it.key.startsWith('org.eclipse') }
+    packages = packages.findAll { !it.key.startsWith('org.eclipse') || it.key.startsWith('org.eclipse.nebula') }
     return ManifestUtils.packagesToString(packages)
   }
 
