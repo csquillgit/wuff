@@ -194,7 +194,8 @@ class OsgiBundleConfigurer extends JavaConfigurer {
             if(details.key.equalsIgnoreCase('Require-Bundle')) {
               newValue = ManifestUtils.mergeRequireBundle(details.baseValue, mergeValue)
             } else if(details.key.equalsIgnoreCase('Export-Package')) {
-              newValue = ManifestUtils.mergePackageList(details.baseValue, mergeValue)
+              //newValue = ManifestUtils.mergePackageList(details.baseValue, mergeValue)
+			  newValue = ManifestUtils.mergePackageList(mergeValue, null)
             } else if(details.key.equalsIgnoreCase('Import-Package')) {
               newValue = ManifestUtils.mergePackageList(details.baseValue, mergeValue)
               // if the user has specified specific eclipse imports, append them to the end
